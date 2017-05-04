@@ -1,6 +1,6 @@
 import pandas as pd
 import os.path
-import import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 def read_data(file_name):
