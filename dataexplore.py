@@ -102,11 +102,24 @@ def correlation(df):
     plt.show()
 
 
-##Create specific histogram function
-q = credit_data["MonthlyIncome"].quantile(0.99)
-nooutliers = credit_data[credit_data["MonthlyIncome"] < q]
-sns.distplot(nooutliers['MonthlyIncome'], bins=5, norm_hist = True)
-plt.show()
-#should the bins be hard-coded?
+def histogram(df, column_name, num_bins):
+    if skew(df[column_name]) > 10:
+        q = df[column_name].quantile(0.99)
+        no_outliers = df[df[column_name] < q]
+        sns.distplot(no_outliers[column_name], bins=num_bins, norm_hist = True)
+    else: 
+        sns.distplot(df[col], bins=num_bins, norm_hist = True)
+    plt.show()
+
+
+def histogram_all(df, num_bins):
+    for col in df.columns.tolist():
+        if skew(df[col]) > 10:
+            q = df[col].quantile(0.99)
+            no_outliers = df[df[col] < q]
+            sns.distplot(no_outliers[col], bins=num_bins, norm_hist = True)
+        else: 
+            sns.distplot(df[col], bins=num_bins, norm_hist = True)
+        plt.show()
         
 
