@@ -123,3 +123,6 @@ def histogram_all(df, num_bins):
         plt.show()
         
 
+#credit_data['MonthlyIncome'].plot.hist(bins=100)
+#plt.show()
+
