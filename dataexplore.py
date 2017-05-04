@@ -95,5 +95,11 @@ def stats_by_var(df, col_name, stat):
     if stat == 'mode':
         return df.groupby(col_name).mode()  
 
+
+def correlation(df):
+    sns.heatmap(df.corr(), annot=True, fmt='.2f', cmap="YlGnBu")
+    plt.title('Correlation of columns')
+    plt.show()
+
         
 
