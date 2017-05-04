@@ -47,7 +47,7 @@ def get_statistics(df):
 
 def get_frequency_chart(df, column_name, chart_type):
     '''
-    Display counts of a column's unique values. 
+    Display counts of a column's unique values (non-continuous).
     
     Inputs: dataframe
             column_name - string
@@ -101,5 +101,12 @@ def correlation(df):
     plt.title('Correlation of columns')
     plt.show()
 
+
+##Create specific histogram function
+q = credit_data["MonthlyIncome"].quantile(0.99)
+nooutliers = credit_data[credit_data["MonthlyIncome"] < q]
+sns.distplot(nooutliers['MonthlyIncome'], bins=5, norm_hist = True)
+plt.show()
+#should the bins be hard-coded?
         
 
