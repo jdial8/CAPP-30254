@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def fill_missing(df, column_name, ,groupby, stat):
+def fill_missing(df, column_name, stat):
     """
     Fill in missing values for one column. 
     Inputs: dataframe
