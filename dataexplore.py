@@ -2,6 +2,8 @@ import pandas as pd
 import os.path
 import matplotlib.pyplot as plt
 import seaborn as sns
+from scipy.stats import skew
+
 
 
 def read_data(file_name):
