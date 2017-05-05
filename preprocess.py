@@ -1,4 +1,4 @@
-def fill_missing(df, column_name, stat):
+def fill_missing(df, column_name, ,groupby, stat):
     """
     Fill in missing values for one column. 
     Inputs: dataframe
@@ -10,6 +10,7 @@ def fill_missing(df, column_name, stat):
     mode = df[column_name].mode()
     
     if stat == 'mean':
+        #mean = credit_data.groupby('zipcode')['MonthlyIncome'].mean().loc[60601]
         df[[column_name]] = df[[column_name]].fillna(value=mean)
         
     if stat == 'median':
@@ -17,7 +18,7 @@ def fill_missing(df, column_name, stat):
         
     if stat == 'mode':
         df[[column_name]] = df[[column_name]].fillna(value=mode)   
-
+import pandas as pd
 
 def discretize(df, col_name, new_col_name, quartiles, labels):
     '''
