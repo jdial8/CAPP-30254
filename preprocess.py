@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def fill_missing(df, column_name, ,groupby, stat):
     """
     Fill in missing values for one column. 
@@ -18,7 +21,7 @@ def fill_missing(df, column_name, ,groupby, stat):
         
     if stat == 'mode':
         df[[column_name]] = df[[column_name]].fillna(value=mode)   
-import pandas as pd
+
 
 def discretize(df, col_name, new_col_name, quartiles, labels):
     '''
