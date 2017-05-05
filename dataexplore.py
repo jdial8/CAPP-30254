@@ -1,6 +1,7 @@
 import pandas as pd
 import os.path
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def read_data(file_name):
