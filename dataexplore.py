@@ -106,9 +106,11 @@ def histogram(df, column_name, num_bins):
     if skew(df[column_name]) > 10:
         q = df[column_name].quantile(0.99)
         no_outliers = df[df[column_name] < q]
-        sns.distplot(no_outliers[column_name], bins=num_bins, norm_hist = True)
+        sns.distplot(no_outliers[column_name], bins=num_bins, norm_hist = False)
     else: 
         sns.distplot(df[col], bins=num_bins, norm_hist = True)
+    plt.title('Histogram of' + ' ' + column_name)
+    plt.ylabel('Count')
     plt.show()
 
 
